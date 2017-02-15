@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11232" systemVersion="15G1212" minimumToolsVersion="Automatic" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="LeaderBoard" representedClassName="LeaderBoard" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="score" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ScoreHistory" inverseName="name" inverseEntity="ScoreHistory" syncable="YES"/>
+    </entity>
+    <entity name="ScoreHistory" representedClassName="ScoreHistory" syncable="YES">
+        <attribute name="score" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="name" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LeaderBoard" inverseName="score" inverseEntity="LeaderBoard" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="LeaderBoard" positionX="-63" positionY="-18" width="128" height="73"/>
+        <element name="ScoreHistory" positionX="198" positionY="-135" width="128" height="73"/>
+    </elements>
+</model>
