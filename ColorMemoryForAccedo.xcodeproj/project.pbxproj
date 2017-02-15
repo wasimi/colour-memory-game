@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE1054431E54723E000F8183 /* LeaderBoard+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CE10543C1E54723E000F8183 /* LeaderBoard+CoreDataClass.m */; };
+		CE1054441E54723E000F8183 /* LeaderBoard+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CE10543E1E54723E000F8183 /* LeaderBoard+CoreDataProperties.m */; };
+		CE1054451E54723E000F8183 /* ScoreHistory+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1054401E54723E000F8183 /* ScoreHistory+CoreDataClass.m */; };
+		CE1054461E54723E000F8183 /* ScoreHistory+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1054421E54723E000F8183 /* ScoreHistory+CoreDataProperties.m */; };
 		CE1EA8F91E52D73B0038CFBD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1EA8F81E52D73B0038CFBD /* main.m */; };
 		CE1EA8FC1E52D73C0038CFBD /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1EA8FB1E52D73C0038CFBD /* AppDelegate.m */; };
 		CE1EA8FF1E52D73C0038CFBD /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1EA8FE1E52D73C0038CFBD /* ViewController.m */; };
@@ -14,10 +18,6 @@
 		CE1EA9051E52D73C0038CFBD /* ColorMemoryForAccedo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CE1EA9031E52D73C0038CFBD /* ColorMemoryForAccedo.xcdatamodeld */; };
 		CE1EA9071E52D73C0038CFBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE1EA9061E52D73C0038CFBD /* Assets.xcassets */; };
 		CE1EA90A1E52D73C0038CFBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE1EA9081E52D73C0038CFBD /* LaunchScreen.storyboard */; };
-		CE1EA91A1E52DF920038CFBD /* ScoreHistory+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1EA9131E52DF920038CFBD /* ScoreHistory+CoreDataClass.m */; };
-		CE1EA91B1E52DF920038CFBD /* ScoreHistory+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1EA9151E52DF920038CFBD /* ScoreHistory+CoreDataProperties.m */; };
-		CE1EA91C1E52DF920038CFBD /* LeaderBoard+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1EA9171E52DF920038CFBD /* LeaderBoard+CoreDataClass.m */; };
-		CE1EA91D1E52DF920038CFBD /* LeaderBoard+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1EA9191E52DF920038CFBD /* LeaderBoard+CoreDataProperties.m */; };
 		CE1EA92A1E52E0920038CFBD /* card_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = CE1EA91F1E52E0920038CFBD /* card_bg.png */; };
 		CE1EA92B1E52E0920038CFBD /* colour1.png in Resources */ = {isa = PBXBuildFile; fileRef = CE1EA9201E52E0920038CFBD /* colour1.png */; };
 		CE1EA92C1E52E0920038CFBD /* colour2.png in Resources */ = {isa = PBXBuildFile; fileRef = CE1EA9211E52E0920038CFBD /* colour2.png */; };
@@ -35,6 +35,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE10543B1E54723E000F8183 /* LeaderBoard+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LeaderBoard+CoreDataClass.h"; sourceTree = "<group>"; };
+		CE10543C1E54723E000F8183 /* LeaderBoard+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LeaderBoard+CoreDataClass.m"; sourceTree = "<group>"; };
+		CE10543D1E54723E000F8183 /* LeaderBoard+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LeaderBoard+CoreDataProperties.h"; sourceTree = "<group>"; };
+		CE10543E1E54723E000F8183 /* LeaderBoard+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LeaderBoard+CoreDataProperties.m"; sourceTree = "<group>"; };
+		CE10543F1E54723E000F8183 /* ScoreHistory+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ScoreHistory+CoreDataClass.h"; sourceTree = "<group>"; };
+		CE1054401E54723E000F8183 /* ScoreHistory+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ScoreHistory+CoreDataClass.m"; sourceTree = "<group>"; };
+		CE1054411E54723E000F8183 /* ScoreHistory+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ScoreHistory+CoreDataProperties.h"; sourceTree = "<group>"; };
+		CE1054421E54723E000F8183 /* ScoreHistory+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ScoreHistory+CoreDataProperties.m"; sourceTree = "<group>"; };
 		CE1EA8F41E52D73B0038CFBD /* ColorMemoryForAccedo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ColorMemoryForAccedo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE1EA8F81E52D73B0038CFBD /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CE1EA8FA1E52D73B0038CFBD /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -46,14 +54,6 @@
 		CE1EA9061E52D73C0038CFBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE1EA9091E52D73C0038CFBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE1EA90B1E52D73C0038CFBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE1EA9121E52DF920038CFBD /* ScoreHistory+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ScoreHistory+CoreDataClass.h"; path = "ColorMemoryForAccedo/Models/ScoreHistory+CoreDataClass.h"; sourceTree = "<group>"; };
-		CE1EA9131E52DF920038CFBD /* ScoreHistory+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ScoreHistory+CoreDataClass.m"; path = "ColorMemoryForAccedo/Models/ScoreHistory+CoreDataClass.m"; sourceTree = "<group>"; };
-		CE1EA9141E52DF920038CFBD /* ScoreHistory+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "ScoreHistory+CoreDataProperties.h"; path = "ColorMemoryForAccedo/Models/ScoreHistory+CoreDataProperties.h"; sourceTree = "<group>"; };
-		CE1EA9151E52DF920038CFBD /* ScoreHistory+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "ScoreHistory+CoreDataProperties.m"; path = "ColorMemoryForAccedo/Models/ScoreHistory+CoreDataProperties.m"; sourceTree = "<group>"; };
-		CE1EA9161E52DF920038CFBD /* LeaderBoard+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LeaderBoard+CoreDataClass.h"; path = "ColorMemoryForAccedo/Models/LeaderBoard+CoreDataClass.h"; sourceTree = "<group>"; };
-		CE1EA9171E52DF920038CFBD /* LeaderBoard+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "LeaderBoard+CoreDataClass.m"; path = "ColorMemoryForAccedo/Models/LeaderBoard+CoreDataClass.m"; sourceTree = "<group>"; };
-		CE1EA9181E52DF920038CFBD /* LeaderBoard+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LeaderBoard+CoreDataProperties.h"; path = "ColorMemoryForAccedo/Models/LeaderBoard+CoreDataProperties.h"; sourceTree = "<group>"; };
-		CE1EA9191E52DF920038CFBD /* LeaderBoard+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "LeaderBoard+CoreDataProperties.m"; path = "ColorMemoryForAccedo/Models/LeaderBoard+CoreDataProperties.m"; sourceTree = "<group>"; };
 		CE1EA91F1E52E0920038CFBD /* card_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = card_bg.png; sourceTree = "<group>"; };
 		CE1EA9201E52E0920038CFBD /* colour1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = colour1.png; sourceTree = "<group>"; };
 		CE1EA9211E52E0920038CFBD /* colour2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = colour2.png; sourceTree = "<group>"; };
@@ -82,22 +82,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE1054471E548B0C000F8183 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE10543B1E54723E000F8183 /* LeaderBoard+CoreDataClass.h */,
+				CE10543C1E54723E000F8183 /* LeaderBoard+CoreDataClass.m */,
+				CE10543D1E54723E000F8183 /* LeaderBoard+CoreDataProperties.h */,
+				CE10543E1E54723E000F8183 /* LeaderBoard+CoreDataProperties.m */,
+				CE10543F1E54723E000F8183 /* ScoreHistory+CoreDataClass.h */,
+				CE1054401E54723E000F8183 /* ScoreHistory+CoreDataClass.m */,
+				CE1054411E54723E000F8183 /* ScoreHistory+CoreDataProperties.h */,
+				CE1054421E54723E000F8183 /* ScoreHistory+CoreDataProperties.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		CE1EA8EB1E52D73A0038CFBD = {
 			isa = PBXGroup;
 			children = (
+				CE1054471E548B0C000F8183 /* Model */,
 				CE1EA93F1E52F6F40038CFBD /* ColorKeys.plist */,
 				CE1EA93C1E52F05C0038CFBD /* NSMutableArray+Shuffle.h */,
 				CE1EA93D1E52F05C0038CFBD /* NSMutableArray+Shuffle.m */,
 				CE1EA93A1E52E4020038CFBD /* CardViewCell.xib */,
 				CE1EA91E1E52E07C0038CFBD /* Resources */,
-				CE1EA9121E52DF920038CFBD /* ScoreHistory+CoreDataClass.h */,
-				CE1EA9131E52DF920038CFBD /* ScoreHistory+CoreDataClass.m */,
-				CE1EA9141E52DF920038CFBD /* ScoreHistory+CoreDataProperties.h */,
-				CE1EA9151E52DF920038CFBD /* ScoreHistory+CoreDataProperties.m */,
-				CE1EA9161E52DF920038CFBD /* LeaderBoard+CoreDataClass.h */,
-				CE1EA9171E52DF920038CFBD /* LeaderBoard+CoreDataClass.m */,
-				CE1EA9181E52DF920038CFBD /* LeaderBoard+CoreDataProperties.h */,
-				CE1EA9191E52DF920038CFBD /* LeaderBoard+CoreDataProperties.m */,
 				CE1EA8F61E52D73B0038CFBD /* ColorMemoryForAccedo */,
 				CE1EA8F51E52D73B0038CFBD /* Products */,
 			);
@@ -239,14 +247,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE1EA8FF1E52D73C0038CFBD /* ViewController.m in Sources */,
+				CE1054451E54723E000F8183 /* ScoreHistory+CoreDataClass.m in Sources */,
+				CE1054461E54723E000F8183 /* ScoreHistory+CoreDataProperties.m in Sources */,
+				CE1054431E54723E000F8183 /* LeaderBoard+CoreDataClass.m in Sources */,
+				CE1054441E54723E000F8183 /* LeaderBoard+CoreDataProperties.m in Sources */,
 				CE1EA9051E52D73C0038CFBD /* ColorMemoryForAccedo.xcdatamodeld in Sources */,
-				CE1EA91A1E52DF920038CFBD /* ScoreHistory+CoreDataClass.m in Sources */,
 				CE1EA8FC1E52D73C0038CFBD /* AppDelegate.m in Sources */,
 				CE1EA8F91E52D73B0038CFBD /* main.m in Sources */,
 				CE1EA93E1E52F05C0038CFBD /* NSMutableArray+Shuffle.m in Sources */,
-				CE1EA91B1E52DF920038CFBD /* ScoreHistory+CoreDataProperties.m in Sources */,
-				CE1EA91D1E52DF920038CFBD /* LeaderBoard+CoreDataProperties.m in Sources */,
-				CE1EA91C1E52DF920038CFBD /* LeaderBoard+CoreDataClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
