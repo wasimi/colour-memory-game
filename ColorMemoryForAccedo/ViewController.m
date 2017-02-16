@@ -12,6 +12,7 @@
 #import "AppDelegate.h"
 #import "LeaderBoard+CoreDataClass.h"
 #import "ScoreHistory+CoreDataClass.h"
+#import "LeaderBoardViewController.h"
 
 @interface ViewController ()
 
@@ -223,6 +224,7 @@
     
     [(AppDelegate *)[UIApplication sharedApplication].delegate saveContext];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

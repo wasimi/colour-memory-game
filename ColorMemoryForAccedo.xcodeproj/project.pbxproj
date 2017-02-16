@@ -32,6 +32,9 @@
 		CE1EA93B1E52E4020038CFBD /* CardViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1EA93A1E52E4020038CFBD /* CardViewCell.xib */; };
 		CE1EA93E1E52F05C0038CFBD /* NSMutableArray+Shuffle.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1EA93D1E52F05C0038CFBD /* NSMutableArray+Shuffle.m */; };
 		CE1EA9401E52F6F40038CFBD /* ColorKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE1EA93F1E52F6F40038CFBD /* ColorKeys.plist */; };
+		CE69269C1E558E9F00E2B703 /* LeaderBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE69269B1E558E9F00E2B703 /* LeaderBoardViewController.m */; };
+		CE69269F1E55907000E2B703 /* UserScoresViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE69269E1E55907000E2B703 /* UserScoresViewController.m */; };
+		CE6926A41E55D99700E2B703 /* HighScoresCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6926A31E55D99700E2B703 /* HighScoresCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +72,12 @@
 		CE1EA93C1E52F05C0038CFBD /* NSMutableArray+Shuffle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Shuffle.h"; sourceTree = "<group>"; };
 		CE1EA93D1E52F05C0038CFBD /* NSMutableArray+Shuffle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Shuffle.m"; sourceTree = "<group>"; };
 		CE1EA93F1E52F6F40038CFBD /* ColorKeys.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ColorKeys.plist; sourceTree = "<group>"; };
+		CE69269A1E558E9F00E2B703 /* LeaderBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderBoardViewController.h; sourceTree = "<group>"; };
+		CE69269B1E558E9F00E2B703 /* LeaderBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderBoardViewController.m; sourceTree = "<group>"; };
+		CE69269D1E55907000E2B703 /* UserScoresViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserScoresViewController.h; sourceTree = "<group>"; };
+		CE69269E1E55907000E2B703 /* UserScoresViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserScoresViewController.m; sourceTree = "<group>"; };
+		CE6926A21E55D99700E2B703 /* HighScoresCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HighScoresCell.h; sourceTree = "<group>"; };
+		CE6926A31E55D99700E2B703 /* HighScoresCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HighScoresCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +131,12 @@
 		CE1EA8F61E52D73B0038CFBD /* ColorMemoryForAccedo */ = {
 			isa = PBXGroup;
 			children = (
+				CE6926A21E55D99700E2B703 /* HighScoresCell.h */,
+				CE6926A31E55D99700E2B703 /* HighScoresCell.m */,
+				CE69269D1E55907000E2B703 /* UserScoresViewController.h */,
+				CE69269E1E55907000E2B703 /* UserScoresViewController.m */,
+				CE69269A1E558E9F00E2B703 /* LeaderBoardViewController.h */,
+				CE69269B1E558E9F00E2B703 /* LeaderBoardViewController.m */,
 				CE1EA8FA1E52D73B0038CFBD /* AppDelegate.h */,
 				CE1EA8FB1E52D73C0038CFBD /* AppDelegate.m */,
 				CE1EA8FD1E52D73C0038CFBD /* ViewController.h */,
@@ -247,13 +262,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE1EA8FF1E52D73C0038CFBD /* ViewController.m in Sources */,
+				CE69269F1E55907000E2B703 /* UserScoresViewController.m in Sources */,
 				CE1054451E54723E000F8183 /* ScoreHistory+CoreDataClass.m in Sources */,
 				CE1054461E54723E000F8183 /* ScoreHistory+CoreDataProperties.m in Sources */,
 				CE1054431E54723E000F8183 /* LeaderBoard+CoreDataClass.m in Sources */,
+				CE69269C1E558E9F00E2B703 /* LeaderBoardViewController.m in Sources */,
 				CE1054441E54723E000F8183 /* LeaderBoard+CoreDataProperties.m in Sources */,
 				CE1EA9051E52D73C0038CFBD /* ColorMemoryForAccedo.xcdatamodeld in Sources */,
 				CE1EA8FC1E52D73C0038CFBD /* AppDelegate.m in Sources */,
 				CE1EA8F91E52D73B0038CFBD /* main.m in Sources */,
+				CE6926A41E55D99700E2B703 /* HighScoresCell.m in Sources */,
 				CE1EA93E1E52F05C0038CFBD /* NSMutableArray+Shuffle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
