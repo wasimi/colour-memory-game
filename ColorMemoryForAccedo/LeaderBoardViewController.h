@@ -15,4 +15,6 @@
 
 }
 
+@property(nonatomic, retain) NSString *userName;
+
 @end

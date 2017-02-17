@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UserScoresViewController : UIViewController
+@interface UserScoresViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+
+    IBOutlet UITableView *tblUserScores;
+
+}
+
+@property (nonatomic, retain) NSString *gName;
 
 @end

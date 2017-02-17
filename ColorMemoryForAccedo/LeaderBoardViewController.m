@@ -12,6 +12,7 @@
 #import "LeaderBoard+CoreDataClass.h"
 #import "ScoreHistory+CoreDataClass.h"
 #import "HighScoresCell.h"
+#import "UserScoresViewController.h"
 
 @interface LeaderBoardViewController (){
 
@@ -19,6 +20,7 @@
     NSManagedObjectContext *managedObjectContext;
     
     NSMutableDictionary *namesAndHighScore;
+    
 }
 
 @end
@@ -86,6 +88,19 @@
     return cell;
 
 
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    NSIndexPath *indexOfName = tblHighScores.indexPathForSelectedRow;
+    self.userName = [allNames objectAtIndex:indexOfName.row];
+    UserScoresViewController *vcUserScores = segue.destinationViewController;
+    vcUserScores.gName = self.userName;
 }
 
 - (void)didReceiveMemoryWarning {
