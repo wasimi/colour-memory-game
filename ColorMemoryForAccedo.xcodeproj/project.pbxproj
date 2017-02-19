@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A03B0981E582BA4009CB3DF /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A03B0971E582BA4009CB3DF /* logo.png */; };
 		CE1054431E54723E000F8183 /* LeaderBoard+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CE10543C1E54723E000F8183 /* LeaderBoard+CoreDataClass.m */; };
 		CE1054441E54723E000F8183 /* LeaderBoard+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CE10543E1E54723E000F8183 /* LeaderBoard+CoreDataProperties.m */; };
 		CE1054451E54723E000F8183 /* ScoreHistory+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1054401E54723E000F8183 /* ScoreHistory+CoreDataClass.m */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A03B0971E582BA4009CB3DF /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		CE10543B1E54723E000F8183 /* LeaderBoard+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LeaderBoard+CoreDataClass.h"; sourceTree = "<group>"; };
 		CE10543C1E54723E000F8183 /* LeaderBoard+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "LeaderBoard+CoreDataClass.m"; sourceTree = "<group>"; };
 		CE10543D1E54723E000F8183 /* LeaderBoard+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LeaderBoard+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 		CE1EA91E1E52E07C0038CFBD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9A03B0971E582BA4009CB3DF /* logo.png */,
 				CE1EA91F1E52E0920038CFBD /* card_bg.png */,
 				CE1EA9201E52E0920038CFBD /* colour1.png */,
 				CE1EA9211E52E0920038CFBD /* colour2.png */,
@@ -208,6 +211,7 @@
 				TargetAttributes = {
 					CE1EA8F31E52D73A0038CFBD = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 76223DN9LE;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -240,6 +244,7 @@
 				CE1EA9341E52E0920038CFBD /* iphone_padding_reference.jpg in Resources */,
 				CE1EA9331E52E0920038CFBD /* icon_57x57.png in Resources */,
 				CE1EA9401E52F6F40038CFBD /* ColorKeys.plist in Resources */,
+				9A03B0981E582BA4009CB3DF /* logo.png in Resources */,
 				CE1EA90A1E52D73C0038CFBD /* LaunchScreen.storyboard in Resources */,
 				CE1EA92F1E52E0920038CFBD /* colour5.png in Resources */,
 				CE1EA9301E52E0920038CFBD /* colour6.png in Resources */,
@@ -390,10 +395,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 76223DN9LE;
 				INFOPLIST_FILE = ColorMemoryForAccedo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ColorMemoryForAccedo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -401,10 +409,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = 76223DN9LE;
 				INFOPLIST_FILE = ColorMemoryForAccedo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ColorMemoryForAccedo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

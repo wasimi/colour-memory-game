@@ -14,6 +14,11 @@
 #import "ScoreHistory+CoreDataClass.h"
 #import "LeaderBoardViewController.h"
 
+#define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+
+#define IS_IPAD ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )1024 ) < DBL_EPSILON )
+
+
 @interface ViewController ()
 
 @end
@@ -34,6 +39,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    //card layout minimum spacing adjust
+    
+    
     managedObjectContext = [[(AppDelegate *)[UIApplication sharedApplication].delegate persistentContainer] viewContext];
     
    cardDeck = [[NSMutableArray alloc] init];
@@ -48,6 +56,34 @@
     [cardLayout registerNib:[UINib nibWithNibName:@"CardViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"CardViewCell"];
     [cardLayout reloadData];
     
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSLog(@"SETTING SIZE FOR ITEM AT INDEX %d", indexPath.row);
+    CGSize mElementSize;
+    if (IS_IPAD) {
+        mElementSize = CGSizeMake(150, 190);
+         return mElementSize;
+    }
+    mElementSize = CGSizeMake(75, 95);
+    
+    return mElementSize;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    
+    if (IS_IPHONE_5) {
+        return 5.0;
+    }
+    return 10.0;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    if (IS_IPHONE_5) {
+        return 5.0;
+    }
+    return 10.0;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -115,7 +151,7 @@
         if ([[cardDeck objectAtIndex:color1.row] isEqualToString:[cardDeck objectAtIndex:color2.row]]) {
             currentScore = currentScore + 2;
             if (selectedIndices.count==16) {
-                UIAlertController *gameOver = [UIAlertController alertControllerWithTitle:@"Game Over" message:@"" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertController *gameOver = [UIAlertController alertControllerWithTitle:@"Game Over" message:[NSString stringWithFormat:@"Your score: %li",(long)currentScore] preferredStyle:UIAlertControllerStyleAlert];
                 [gameOver addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
                     [textField setPlaceholder:@"Enter name"];
                 }];
