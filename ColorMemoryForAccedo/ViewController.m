@@ -4,10 +4,20 @@
 //
 //  Created by User on 2/14/17.
 //  Copyright © 2017 Wasim. All rights reserved.
-//
+// new comment
 
 #import "ViewController.h"
 #import "NSMutableArray+Shuffle.h"
+#import <CoreData/CoreData.h>
+#import "AppDelegate.h"
+#import "LeaderBoard+CoreDataClass.h"
+#import "ScoreHistory+CoreDataClass.h"
+#import "LeaderBoardViewController.h"
+
+#define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+
+#define IS_IPAD ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )1024 ) < DBL_EPSILON )
+
 
 @interface ViewController ()
 
@@ -20,13 +30,20 @@
     NSMutableArray *colorSet;
     NSMutableArray *selectedIndices;
     NSDictionary *colorKeys;
-    NSInteger score;
+    NSInteger currentScore;
+    
+    NSManagedObjectContext *managedObjectContext;
 
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    //card layout minimum spacing adjust
+    
+    
+    managedObjectContext = [[(AppDelegate *)[UIApplication sharedApplication].delegate persistentContainer] viewContext];
+    
    cardDeck = [[NSMutableArray alloc] init];
    shuffledDeck = [[NSMutableArray alloc] init];
     colorSet = [[NSMutableArray alloc] init];
@@ -38,6 +55,35 @@
     
     [cardLayout registerNib:[UINib nibWithNibName:@"CardViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"CardViewCell"];
     [cardLayout reloadData];
+    
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSLog(@"SETTING SIZE FOR ITEM AT INDEX %d", indexPath.row);
+    CGSize mElementSize;
+    if (IS_IPAD) {
+        mElementSize = CGSizeMake(150, 190);
+         return mElementSize;
+    }
+    mElementSize = CGSizeMake(75, 95);
+    
+    return mElementSize;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    
+    if (IS_IPHONE_5) {
+        return 5.0;
+    }
+    return 10.0;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    if (IS_IPHONE_5) {
+        return 5.0;
+    }
+    return 10.0;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
@@ -103,24 +149,35 @@
         NSIndexPath *color1 = colorSets[0];
         NSIndexPath *color2 = colorSets[1];
         if ([[cardDeck objectAtIndex:color1.row] isEqualToString:[cardDeck objectAtIndex:color2.row]]) {
-            score = score + 2;
+            currentScore = currentScore + 2;
             if (selectedIndices.count==16) {
-                UIAlertController *gameOver = [UIAlertController alertControllerWithTitle:@"Game Over" message:@"" preferredStyle:UIAlertControllerStyleAlert];
-                UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
+                UIAlertController *gameOver = [UIAlertController alertControllerWithTitle:@"Game Over" message:[NSString stringWithFormat:@"Your score: %li",(long)currentScore] preferredStyle:UIAlertControllerStyleAlert];
+                [gameOver addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+                    [textField setPlaceholder:@"Enter name"];
+                }];
+                UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                    UITextField *txtField = gameOver.textFields.firstObject;
+                    if ([txtField.text length]>0) {
+                        //save name and score to core data
+                        [self saveNameAndScore:txtField.text];
+                    }
+                }];
+                UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil];
                 [gameOver addAction:ok];
+                [gameOver addAction:cancel];
                 [self presentViewController:gameOver animated:YES completion:nil];
             }
         }
         else {
             
-            score = score - 1;
+            currentScore = currentScore - 1;
             [cardDeck replaceObjectAtIndex:color1.row withObject:@"card_bg.png"];
             [cardDeck replaceObjectAtIndex:color2.row withObject:@"card_bg.png"];
             [selectedIndices removeObjectAtIndex:[selectedIndices indexOfObject:color1]];
             [selectedIndices removeObjectAtIndex:[selectedIndices indexOfObject:color2]];
         }
-        NSLog(@"%li",(long)score);
-        [lblScore setText:[NSString stringWithFormat:@"%i",score]];
+        NSLog(@"%li",(long)currentScore);
+        [lblScore setText:[NSString stringWithFormat:@"%i",currentScore]];
         colorSet = [[NSMutableArray alloc] init];
     }
     [cardLayout reloadData];
@@ -130,7 +187,7 @@
 
 - (IBAction)restartGame:(id)sender{
     
-    score = 0;
+    currentScore = 0;
     
     [selectedIndices removeAllObjects];
     [cardDeck removeAllObjects];
@@ -141,7 +198,7 @@
     
     [cardLayout reloadData];
     
-    [lblScore setText:[NSString stringWithFormat:@"%i",score]];
+    [lblScore setText:[NSString stringWithFormat:@"%i",currentScore]];
 
 }
 
@@ -162,6 +219,49 @@
 
 }
 
+- (void)saveNameAndScore:(NSString*)gamerName {
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"name=='%@'",gamerName]];
+    NSFetchRequest *fetchRequest = [LeaderBoard fetchRequest];
+    [fetchRequest setPredicate:predicate];
+    NSError *error = nil;
+    NSArray *results = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    if (results.count>0) {
+        
+        //add score
+        LeaderBoard *existingEntry = results[0];
+        
+        NSMutableSet *gameScore = existingEntry.scoreHistory.mutableCopy;
+        ScoreHistory *newScoreHistory = [NSEntityDescription insertNewObjectForEntityForName:@"ScoreHistory" inManagedObjectContext:managedObjectContext];
+        newScoreHistory.score = currentScore;
+        [gameScore addObject:newScoreHistory];
+        
+        [existingEntry addScoreHistory:gameScore];
+        
+        
+    }
+    
+    else {
+    
+        
+        //add new user and score
+        
+    LeaderBoard *newEntry = [NSEntityDescription insertNewObjectForEntityForName:@"LeaderBoard" inManagedObjectContext:managedObjectContext];
+    [newEntry setName:gamerName];
+    
+    NSMutableSet *gameScore = newEntry.scoreHistory.mutableCopy;
+    ScoreHistory *newScoreHistory = [NSEntityDescription insertNewObjectForEntityForName:@"ScoreHistory" inManagedObjectContext:managedObjectContext];
+    newScoreHistory.score = currentScore;
+    [gameScore addObject:newScoreHistory];
+    
+    [newEntry addScoreHistory:gameScore];
+        
+    }
+    
+    [(AppDelegate *)[UIApplication sharedApplication].delegate saveContext];
+}
+
+// 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

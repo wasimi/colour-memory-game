@@ -2,7 +2,7 @@
 //  ScoreHistory+CoreDataProperties.h
 //  ColorMemoryForAccedo
 //
-//  Created by User on 2/14/17.
+//  Created by User on 2/15/17.
 //  Copyright © 2017 Wasim. All rights reserved.
 //
 
@@ -16,7 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSFetchRequest<ScoreHistory *> *)fetchRequest;
 
 @property (nonatomic) int16_t score;
-@property (nullable, nonatomic, retain) LeaderBoard *name;
+@property (nullable, nonatomic, retain) LeaderBoard *leaderBoard;
 
 @end
 

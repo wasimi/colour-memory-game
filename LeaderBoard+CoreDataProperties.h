@@ -2,7 +2,7 @@
 //  LeaderBoard+CoreDataProperties.h
 //  ColorMemoryForAccedo
 //
-//  Created by User on 2/14/17.
+//  Created by User on 2/15/17.
 //  Copyright © 2017 Wasim. All rights reserved.
 //
 
@@ -16,16 +16,16 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSFetchRequest<LeaderBoard *> *)fetchRequest;
 
 @property (nullable, nonatomic, copy) NSString *name;
-@property (nullable, nonatomic, retain) NSSet<ScoreHistory *> *score;
+@property (nullable, nonatomic, retain) NSSet<ScoreHistory *> *scoreHistory;
 
 @end
 
 @interface LeaderBoard (CoreDataGeneratedAccessors)
 
-- (void)addScoreObject:(ScoreHistory *)value;
-- (void)removeScoreObject:(ScoreHistory *)value;
-- (void)addScore:(NSSet<ScoreHistory *> *)values;
-- (void)removeScore:(NSSet<ScoreHistory *> *)values;
+- (void)addScoreHistoryObject:(ScoreHistory *)value;
+- (void)removeScoreHistoryObject:(ScoreHistory *)value;
+- (void)addScoreHistory:(NSSet<ScoreHistory *> *)values;
+- (void)removeScoreHistory:(NSSet<ScoreHistory *> *)values;
 
 @end
 

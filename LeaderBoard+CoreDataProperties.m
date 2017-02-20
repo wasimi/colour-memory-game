@@ -2,7 +2,7 @@
 //  LeaderBoard+CoreDataProperties.m
 //  ColorMemoryForAccedo
 //
-//  Created by User on 2/14/17.
+//  Created by User on 2/15/17.
 //  Copyright © 2017 Wasim. All rights reserved.
 //
 
@@ -15,6 +15,6 @@
 }
 
 @dynamic name;
-@dynamic score;
+@dynamic scoreHistory;
 
 @end
