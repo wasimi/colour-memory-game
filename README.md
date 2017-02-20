@@ -6,6 +6,9 @@
 3. Select iPhone or iPad simulator 
 4. Run
 5. Play
+6. Reset Game to play again
+7. LeaderBoards to check high score 
+8. Tap on high score to view all previous scores
 
 ## Description
 This game relies on your ability to memorize the location of different colors and to be able to match them in pairs accordingly.
